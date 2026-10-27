@@ -1,5 +1,5 @@
 ﻿//2. Массив для проверки алгоритмов
-int[] scores = { 60, 80, 40, 80, 90 };
+// int[] scores = { 60, 80, 40, 80, 90 };
 
 //3. Сумма элементов
 // int sum = 0;
@@ -84,16 +84,74 @@ int[] scores = { 60, 80, 40, 80, 90 };
 // Console.WriteLine(FindMin(scores));
 
 //Найдите ошибку: минимум
-int FindMin(int[] numbers)
+// int FindMin(int[] numbers)
+// {
+//     int min = numbers[0];
+//     foreach (int number in numbers)
+//     {
+//         if (number < min)
+//         {
+//             min = number;
+//         }
+//     }
+//     return min;
+// }
+// Console.WriteLine(FindMin(new int[] { 12, 4, 9 }));
+
+//6. Линейный поиск и индекс
+// int FindIndex(int[] numbers, int target)
+// {
+//     for (int i = 0; i < numbers.Length; i++)
+//     {
+//         if (numbers[i] == target)
+//         {
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
+// Console.WriteLine(FindIndex(scores, 80));
+// Console.WriteLine(FindIndex(scores, 100));
+
+//Найдите ошибку: первое совпадение
+// int FindIndex(int[] numbers, int target)
+// {
+//     int index = -1;
+//     for (int i = 0; i < numbers.Length; i++)
+//     {
+//         if (numbers[i] == target)
+//         {
+//             index = i;
+//             break;
+//         }
+//     }
+//     return index;
+// } 
+// Console.WriteLine(FindIndex(scores, 80));
+// Console.WriteLine(FindIndex(scores, 60));
+// Console.WriteLine(FindIndex(scores, 100));
+
+//7. Основная часть — «Анализатор результатов»
+int[] scores = new int[7];
+for (int i = 0; i < scores.Length; i++)
 {
-    int min = numbers[0];
-    foreach (int number in numbers)
-    {
-        if (number < min)
-        {
-            min = number;
-        }
-    }
-    return min;
+    Console.Write($"Результат {i + 1}: ");
+    scores[i] = Convert.ToInt32(Console.ReadLine());
 }
-Console.WriteLine(FindMin(new int[] { 12, 4, 9 }));
+Console.WriteLine();
+Console.WriteLine(">>> Анализ результатов<<<");
+Console.WriteLine();
+Console.WriteLine($"Сумма: {SumArray(scores)}");
+Console.WriteLine($"Минимум: {FindMin(scores)}");
+Console.WriteLine($"Максимум: {FindMax(scores)}");
+Console.WriteLine($"Результатов 50 и больше: {CountAtLeast(scores, 50)}");
+
+Console.Write("Какой результат найти: ");
+int sum = 0;
+int SumArray(int[] numbers){
+foreach (int number in numbers){
+    sum += number;
+    }
+    return sum;
+}
+ 
