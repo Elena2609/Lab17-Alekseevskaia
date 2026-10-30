@@ -35,4 +35,4 @@
 
 ## Результат
 
-![Результат программы](result-Alekseevskaia.png)
+![Результат программы](img/result-Alekseevskaia.png)
