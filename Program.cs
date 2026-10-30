@@ -88,3 +88,20 @@ if (index == -1){
 } else {
     Console.Write($"Первый индекс: {index}");
 }
+
+//Самостоятельное задание 
+int FindLastIndex(int[] numbers, int target){
+    int lastIndex = -1;
+    for (int i = 0; i < numbers.Length; i++){
+        if (numbers[i] == target){
+            lastIndex = i;
+        }
+        
+    } 
+    return lastIndex;
+} 
+
+int[] number = {5, 8, 5, 10, 5};
+Console.WriteLine();
+Console.WriteLine($"Последний индекс 5: {FindLastIndex(number, 5)}");
+Console.WriteLine($"Последний индекс 7: {FindLastIndex(number, 7)}");
